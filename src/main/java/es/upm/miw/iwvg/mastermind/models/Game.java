@@ -2,7 +2,7 @@ package es.upm.miw.iwvg.mastermind.models;
 
 public class Game {
 
-    public static final int MAX_ATTEMPTS = 5;
+    public static final int MAX_ATTEMPTS = 10;
 
     private State state;
 
