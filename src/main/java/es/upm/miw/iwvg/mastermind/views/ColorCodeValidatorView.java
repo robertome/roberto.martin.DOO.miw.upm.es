@@ -21,7 +21,7 @@ public class ColorCodeValidatorView {
 
     @Override
     public String toString() {
-        return "[" + colorCodeValidator.getColorCodePattern() + "]";
+        return colorCodeValidator.getColorCodePattern();
     }
 
 }

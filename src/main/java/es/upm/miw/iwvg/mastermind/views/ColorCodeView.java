@@ -1,12 +1,16 @@
 package es.upm.miw.iwvg.mastermind.views;
 
+import es.upm.miw.iwvg.mastermind.models.Color;
 import es.upm.miw.iwvg.mastermind.models.ColorCode;
 import es.upm.miw.iwvg.mastermind.utils.IO;
 
-public class ColorCodeView {
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
-    private static final String ATTEMPT_MSG = "Intento? [cuatro letras de entre A-amarillo, R-rojo, V-verde, Z-azul, B-blanco, N-negro]: ";
+class ColorCodeView {
 
+    private static final String ATTEMPT_MSG =
+            String.format("Intento? [cuatro letras de entre %s]: ", Arrays.stream(Color.values()).map(color -> color.toString()).collect(Collectors.joining(",")));
 
     private ColorCode colorCode;
 
@@ -22,9 +26,8 @@ public class ColorCodeView {
         IO.instance().writeln(ATTEMPT_MSG + colorCode);
     }
 
-    public void writeSecretColorCode() {
-        //IO.instance().writeln("Código Secreto: " + secret(colorCode.toString()));
-        IO.instance().writeln("Código Secreto: " + colorCode.toString());
+    void writeSecretColorCode() {
+        IO.instance().writeln("Código Secreto: " + secret(colorCode.toString()));
     }
 
     private String secret(String string) {
